@@ -1,0 +1,26 @@
+h1{
+    font-family: serif;
+    text-align: center;
+    color: #377ba8;
+    background-color: lightgray;
+}
+form{
+    width: 350px;
+    padding: 16px;
+    border-radius: 10px;
+    margin: auto;
+    background-color: #ccc;
+}
+form input{
+    color: green;
+    border-color:white;
+    border-style: none;
+}
+button{
+    text-align: center;
+    font-weight: bold;
+}
+form input[text]{
+    color:red
+    
+}

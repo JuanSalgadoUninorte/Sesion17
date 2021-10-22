@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/miestilo.css') }}">
+    <script src="{{ url_for('static', filename='js/funciones.js')}}"></script>
+    <title>Formulario</title>
+</head>
+<body>
+    <ul>
+        <li><a href="/cerrarSesion/">Cerrar Sesión</a></li>
+        <li><a href="/rutaDescargaImg/">Imagen</a></li>
+        <li><a href="/rutaDescargaPdf/">PDF</a></li>
+    </ul>
+        
+    <h3>{{ usuario2 }}</h3>
+    {% block contenido %}
+    <form action="/estudiante/guardar/" id="IdFormulario" method="POST">
+        {{ form.hidden_tag() }}<!--Evitar ataques de CRSF SIDE FORGUETTY-->
+        <div>
+            {{ form.documento.label }}
+            {{ form.documento() }}
+        </div>
+        <div>
+            {{ form.nombre.label }}
+            {{ form.nombre() }}
+        </div>
+        <div>
+            {{ form.ciclo.label }}
+            <select name="ciclo" id="ciclo">
+                <option value="">Selecciona una opción: </option>
+                {% for ite in ciclos %}
+                    <option value="{{ ite [0] }}">{{ ite [0] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            {{ form.sexo.label }}
+            {{ form.sexo() }}
+        </div>
+        <div>
+            {{ form.estado.label }}
+            {{ form.estado() }}
+        </div>
+        <div>
+            {{form.botonEliminar()}}
+            {{form.botonActualizar()}}
+            {{form.botonCrear()}}
+            {{form.botonVisualizar()}}
+            {{form.botonListar()}}
+        </div>
+    </form>
+    {% endblock %}
+</body>
+</html>

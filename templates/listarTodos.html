@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista todos</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td>
+                documento
+            </td>
+            <td>
+                nombre
+            </td>
+            <td>
+                ciclo
+            </td>
+            <td>
+                sexo
+            </td>
+            <td>
+                estado
+            </td>
+        </tr>
+        {% for r in fISeleccion %}
+        <tr>
+            <td>
+                {{ r[0] }}
+            </td>
+            <td>
+                {{ r[1] }}
+            </td>
+            <td>
+                {{ r[2] }}
+            </td>
+            <td>
+                {{ r[3] }}
+            </td>
+            <td>
+                {{ r[4] }}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
